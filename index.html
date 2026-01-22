@@ -19,7 +19,7 @@
     />
 
     <link rel="stylesheet" href="css/animate.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
@@ -1071,7 +1071,7 @@
             </button>
           </div>
           <div class="modal-body p-4 p-md-5">
-            <form action="mailto:newgenconst102@gmail.com" method="post" enctype="text/plain" class="appointment-form ftco-animate">
+            <form id="quoteForm" class="appointment-form ftco-animate" action="https://formsubmit.co/newgenconst102@gmail.com" method="POST">
               <h3>Request Quote</h3>
               <div class="">
                 <div class="form-group">
@@ -1079,6 +1079,9 @@
                     type="text"
                     class="form-control"
                     placeholder="First Name"
+                    name="first_name"
+                    id="quote_first_name"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -1086,10 +1089,16 @@
                     type="text"
                     class="form-control"
                     placeholder="Last Name"
+                    name="last_name"
+                    id="quote_last_name"
+                    required
                   />
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Phone" />
+                  <input type="email" class="form-control" placeholder="Email" name="email" id="quote_email" required />
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Phone" name="phone" id="quote_phone" required />
                 </div>
               </div>
               <div class="">
@@ -1099,15 +1108,15 @@
                       <div class="icon">
                         <span class="fa fa-chevron-down"></span>
                       </div>
-                      <select name="" id="" class="form-control">
+                      <select name="service" id="quote_service" class="form-control" required>
                         <option value="">Select Your Services</option>
-                        <option value="">Architecture</option>
-                        <option value="">Renovation</option>
-                        <option value="">Construction</option>
-                        <option value="">Interior &amp; Exterior</option>
-                        <option value="">Chemical Research</option>
-                        <option value="">Petroleum &amp; Gas</option>
-                        <option value="">Other Services</option>
+                        <option value="Architecture">Architecture</option>
+                        <option value="Renovation">Renovation</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Interior & Exterior">Interior &amp; Exterior</option>
+                        <option value="Chemical Research">Chemical Research</option>
+                        <option value="Petroleum & Gas">Petroleum &amp; Gas</option>
+                        <option value="Other Services">Other Services</option>
                       </select>
                     </div>
                   </div>
@@ -1116,12 +1125,13 @@
               <div class="">
                 <div class="form-group">
                   <textarea
-                    name=""
-                    id=""
+                    name="message"
+                    id="quote_message"
                     cols="30"
                     rows="4"
                     class="form-control"
                     placeholder="Message"
+                    required
                   ></textarea>
                 </div>
                 <div class="form-group">
@@ -1129,6 +1139,7 @@
                     type="submit"
                     value="Request A Quote"
                     class="btn btn-primary py-3 px-4"
+                    id="quote_submitBtn"
                   />
                 </div>
               </div>
@@ -1164,6 +1175,7 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -1176,9 +1188,8 @@
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/jquery.timepicker.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="js/contact-form.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
