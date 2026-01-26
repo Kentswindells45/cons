@@ -30,6 +30,10 @@
 
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
   </head>
   <body>
     <div class="py-1 top">
@@ -752,6 +756,10 @@
           </div>
           <div class="modal-body p-4 p-md-5">
             <form action="https://formsubmit.co/newgenconst102@gmail.com" method="POST" class="appointment-form ftco-animate">
+              <input type="hidden" name="_subject" value="Quote Request from Blog Post">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="blog-single.html?quote=1">
               <h3>Request Quote</h3>
               <div class="">
                 <div class="form-group">
@@ -760,6 +768,7 @@
                     class="form-control"
                     placeholder="First Name"
                     name="first_name"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -768,10 +777,11 @@
                     class="form-control"
                     placeholder="Last Name"
                     name="last_name"
+                    required
                   />
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Phone" name="phone" />
+                  <input type="text" class="form-control" placeholder="Phone" name="phone" required />
                 </div>
               </div>
               <div class="">
@@ -804,6 +814,7 @@
                     rows="4"
                     class="form-control"
                     placeholder="Message"
+                    required
                   ></textarea>
                 </div>
                 <div class="form-group">
@@ -860,7 +871,8 @@
     <script src="js/scrollax.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script src="js/google-map.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="js/contact-form.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

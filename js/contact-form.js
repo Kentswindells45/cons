@@ -20,10 +20,14 @@
     hideMethod: "fadeOut",
   };
 
-  // Validate email format
-  function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  // Check URL parameters for success messages
+  function checkUrlParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === '1') {
+      toastr.success("Thank you! Your message has been sent successfully. We'll get back to you soon.", "Message Sent");
+    } else if (urlParams.get('quote') === '1') {
+      toastr.success("Thank you! Your quote request has been sent successfully. We'll get back to you soon.", "Quote Request Sent");
+    }
   }
 
   // Handle Contact Form (contact.html page)
@@ -51,27 +55,25 @@
         return false;
       }
 
-      // Show success message
-      toastr.success(
-        "Message sent successfully! We will get back to you soon.",
-        "Success",
-      );
-      // Form will submit naturally to FormSubmit
+      // Show success message immediately (form will submit normally)
+      toastr.success("Sending your message... You will be redirected to a confirmation page.", "Message Sent");
+      // Form will submit normally to FormSubmit
     });
   }
 
-  // Handle Quote Form (modal in index.html)
+  // Handle Quote Form (modal forms across all pages)
   function setupQuoteForm() {
-    if ($("#quoteForm").length === 0) return;
+    // Handle all quote forms with class .appointment-form
+    $(".appointment-form").on("submit", function (e) {
+      const $form = $(this);
 
-    $("#quoteForm").on("submit", function (e) {
-      // Get form values
-      const firstName = $("#quote_first_name").val().trim();
-      const lastName = $("#quote_last_name").val().trim();
-      const email = $("#quote_email").val().trim();
-      const phone = $("#quote_phone").val().trim();
-      const service = $("#quote_service").val().trim();
-      const message = $("#quote_message").val().trim();
+      // Get form values - try different possible field names
+      const firstName = $form.find('input[name="first_name"], input[placeholder*="First"]').val().trim();
+      const lastName = $form.find('input[name="last_name"], input[placeholder*="Last"]').val().trim();
+      const email = $form.find('input[name="email"], input[type="email"]').val().trim();
+      const phone = $form.find('input[name="phone"], input[placeholder*="Phone"]').val().trim();
+      const service = $form.find('select[name="service"]').val();
+      const message = $form.find('textarea[name="message"]').val().trim();
 
       // Validate all fields are filled
       if (!firstName || !lastName || !email || !phone || !service || !message) {
@@ -87,17 +89,22 @@
         return false;
       }
 
-      // Show success message
-      toastr.success(
-        "Quote request sent successfully! We will contact you soon.",
-        "Success",
-      );
-      // Form will submit naturally to FormSubmit
+      // Show success message (form will submit normally)
+      toastr.success("Sending your quote request... You will be redirected to a confirmation page.", "Request Sent");
+
+      // Close modal immediately
+      if ($form.closest('.modal').length > 0) {
+        $form.closest('.modal').modal('hide');
+      }
+
+      // Form will submit normally to FormSubmit
     });
   }
 
   // Initialize on document ready
   $(document).ready(function () {
-
+    setupContactForm();
+    setupQuoteForm();
+    checkUrlParameters();
   });
 })(jQuery);

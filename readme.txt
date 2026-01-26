@@ -8,27 +8,31 @@ More information about the license is available here: https://colorlib.com/wp/li
 Removing copyright information without the license will result in suspension of your hosting and/or domain name(s).
 
 ================================================================================
-GOOGLE MAPS SETUP INSTRUCTIONS
+EMAIL SYSTEM SETUP
 ================================================================================
 
-To enable Google Maps functionality on your website, you need to obtain a Google Maps API key:
+The website now uses a robust email system powered by FormSubmit (https://formsubmit.co) that works reliably when hosted on any web server.
 
-1. Go to the Google Cloud Console: https://console.cloud.google.com/
-2. Create a new project or select an existing one
-3. Enable the following APIs:
-   - Maps JavaScript API
-   - Geocoding API
-4. Create credentials (API Key)
-5. Optionally restrict the API key to your domain for security
-6. Replace "YOUR_API_KEY" in all HTML files with your actual API key
+CURRENT CONFIGURATION:
+- All forms send emails to: newgenconst102@gmail.com
+- Service: FormSubmit.co (free tier)
+- Features: AJAX submission, validation, success notifications
 
-The HTML files that need to be updated are:
-- index.html
-- about.html
-- services.html
-- project.html
-- contact.html
-- blog.html
-- blog-single.html
+HOW IT WORKS:
+1. User fills out any contact/quote form
+2. JavaScript validates all required fields
+3. Form data is sent via AJAX to FormSubmit
+4. User sees success/error notifications via toastr
+5. Email is delivered to newgenconst102@gmail.com
+6. Form is cleared and modal closed (if applicable)
 
-If you don't set up a valid API key, the map will show a fallback message instead of the interactive Google Map.
+FORMS INCLUDED:
+- Contact page main form (contact.html)
+- All "Request Quote" modal forms across all pages
+- All forms have required field validation
+
+If you need to change the email address, update the form action URLs in all HTML files:
+FROM: https://formsubmit.co/newgenconst102@gmail.com
+TO:   https://formsubmit.co/YOUR_NEW_EMAIL@gmail.com
+
+No server-side code or email configuration needed - works out of the box!

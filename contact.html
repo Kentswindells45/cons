@@ -230,6 +230,10 @@
               action="https://formsubmit.co/newgenconst102@gmail.com"
               method="POST"
             >
+              <input type="hidden" name="_subject" value="New Contact Form Message">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="contact.html?success=1">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -538,6 +542,10 @@
               method="POST"
               class="appointment-form ftco-animate"
             >
+              <input type="hidden" name="_subject" value="Quote Request from Contact Page">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="contact.html?quote=1">
               <h3>Request Quote</h3>
               <div class="">
                 <div class="form-group">
@@ -546,6 +554,7 @@
                     class="form-control"
                     placeholder="First Name"
                     name="first_name"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -554,6 +563,7 @@
                     class="form-control"
                     placeholder="Last Name"
                     name="last_name"
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -562,6 +572,7 @@
                     class="form-control"
                     placeholder="Phone"
                     name="phone"
+                    required
                   />
                 </div>
               </div>
@@ -601,6 +612,7 @@
                     rows="4"
                     class="form-control"
                     placeholder="Message"
+                    required
                   ></textarea>
                 </div>
                 <div class="form-group">
