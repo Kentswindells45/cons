@@ -37,6 +37,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
     />
+    <!-- Content Security Policy for XSS Protection -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://stackpath.bootstrapcdn.com https://code.jquery.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://stackpath.bootstrapcdn.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://stackpath.bootstrapcdn.com data:; form-action https://formsubmit.co; frame-ancestors 'none';" />
+    <!-- X-UA-Compatible for older IE security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Disable XSS in older browsers -->
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <!-- Disable MIME type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   </head>
   <body>
     <div class="py-1 top">
@@ -642,12 +650,14 @@
           >
             <div class="heading-section heading-section-white">
               <span class="subheading" style="color: #fff"
-                >Read Testimonials</span
+                >Client Success Stories</span
               >
               <h2 class="mb-4" style="font-size: 50px">
-                It's always a joy to hear that the work we do has positively
-                reviews
+                Thousands of satisfied clients across Ghana trust NewGen Construction
               </h2>
+              <p style="color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.8;">
+                From residential homes to commercial complexes, our clients consistently praise our professionalism, quality workmanship, and commitment to excellence.
+              </p>
             </div>
           </div>
           <div class="col-md-6 pl-md-5 py-4 py-md-5 aside-stretch-right">
@@ -655,130 +665,135 @@
               <div class="item">
                 <div
                   class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end"
+                  style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,123,255,0.15); padding: 30px; height: 100%;"
                 >
-                  <div
-                    class="user-img"
-                    style="background-image: url(images/person_1.jpg)"
-                  >
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="fa fa-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts. Separated they live in Bookmarksgrove right at the
-                      coast of the Semantics, a large language ocean
+                  <div class="w-100">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                      <div
+                        class="user-img"
+                        style="background-image: url(images/person_1.jpg); width: 70px; height: 70px; border-radius: 50%; background-size: cover; background-position: center;"
+                      ></div>
+                      <div style="color: #ffc107; font-size: 20px;">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="mb-3" style="color: #333; font-size: 16px; line-height: 1.6;">
+                      "NewGen Construction transformed our office space with meticulous attention to detail. On schedule, within budget, and exceptional quality. Highly recommended!"
                     </p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Guests</span>
+                    <p class="name" style="margin: 0; color: #007bff; font-weight: 700; font-size: 18px;">Kwame Mensah</p>
+                    <span class="position" style="color: #6c757d; font-size: 14px;">CEO, Accra Tech Solutions</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div
                   class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end"
+                  style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,123,255,0.15); padding: 30px; height: 100%;"
                 >
-                  <div
-                    class="user-img"
-                    style="background-image: url(images/person_2.jpg)"
-                  >
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="fa fa-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts. Separated they live in Bookmarksgrove right at the
-                      coast of the Semantics, a large language ocean
+                  <div class="w-100">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                      <div
+                        class="user-img"
+                        style="background-image: url(images/person_2.jpg); width: 70px; height: 70px; border-radius: 50%; background-size: cover; background-position: center;"
+                      ></div>
+                      <div style="color: #ffc107; font-size: 20px;">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="mb-3" style="color: #333; font-size: 16px; line-height: 1.6;">
+                      "Our residential project was completed ahead of schedule with outstanding craftsmanship. The team was professional, respectful, and truly cared about our satisfaction."
                     </p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Guests</span>
+                    <p class="name" style="margin: 0; color: #007bff; font-weight: 700; font-size: 18px;">Ama Boateng</p>
+                    <span class="position" style="color: #6c757d; font-size: 14px;">Homeowner, Kumasi</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div
                   class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end"
+                  style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,123,255,0.15); padding: 30px; height: 100%;"
                 >
-                  <div
-                    class="user-img"
-                    style="background-image: url(images/person_3.jpg)"
-                  >
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="fa fa-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts. Separated they live in Bookmarksgrove right at the
-                      coast of the Semantics, a large language ocean
+                  <div class="w-100">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                      <div
+                        class="user-img"
+                        style="background-image: url(images/person_3.jpg); width: 70px; height: 70px; border-radius: 50%; background-size: cover; background-position: center;"
+                      ></div>
+                      <div style="color: #ffc107; font-size: 20px;">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="mb-3" style="color: #333; font-size: 16px; line-height: 1.6;">
+                      "For our commercial renovation, NewGen's architectural vision and execution were flawless. They understood our business needs and delivered exactly what we envisioned."
                     </p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Guests</span>
+                    <p class="name" style="margin: 0; color: #007bff; font-weight: 700; font-size: 18px;">Kofi Asante</p>
+                    <span class="position" style="color: #6c757d; font-size: 14px;">Business Owner, Tema</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div
                   class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end"
+                  style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,123,255,0.15); padding: 30px; height: 100%;"
                 >
-                  <div
-                    class="user-img"
-                    style="background-image: url(images/person_1.jpg)"
-                  >
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="fa fa-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts. Separated they live in Bookmarksgrove right at the
-                      coast of the Semantics, a large language ocean
+                  <div class="w-100">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                      <div
+                        class="user-img"
+                        style="background-image: url(images/person_1.jpg); width: 70px; height: 70px; border-radius: 50%; background-size: cover; background-position: center;"
+                      ></div>
+                      <div style="color: #ffc107; font-size: 20px;">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="mb-3" style="color: #333; font-size: 16px; line-height: 1.6;">
+                      "Working with NewGen on our industrial facility was seamless. Their expertise in complex projects and commitment to safety standards exceeded our expectations."
                     </p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Guests</span>
+                    <p class="name" style="margin: 0; color: #007bff; font-weight: 700; font-size: 18px;">Yaw Osei</p>
+                    <span class="position" style="color: #6c757d; font-size: 14px;">Plant Manager, Manufacturing Co.</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div
                   class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end"
+                  style="background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,123,255,0.15); padding: 30px; height: 100%;"
                 >
-                  <div
-                    class="user-img"
-                    style="background-image: url(images/person_3.jpg)"
-                  >
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="fa fa-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-4">
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts. Separated they live in Bookmarksgrove right at the
-                      coast of the Semantics, a large language ocean
+                  <div class="w-100">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                      <div
+                        class="user-img"
+                        style="background-image: url(images/person_2.jpg); width: 70px; height: 70px; border-radius: 50%; background-size: cover; background-position: center;"
+                      ></div>
+                      <div style="color: #ffc107; font-size: 20px;">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                    <p class="mb-3" style="color: #333; font-size: 16px; line-height: 1.6;">
+                      "NewGen's attention to detail and problem-solving skills made all the difference. They transformed our vision into a beautiful reality that exceeds our dreams."
                     </p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Guests</span>
+                    <p class="name" style="margin: 0; color: #007bff; font-weight: 700; font-size: 18px;">Grace Acheampong</p>
+                    <span class="position" style="color: #6c757d; font-size: 14px;">School Principal, Accra</span>
                   </div>
                 </div>
               </div>
@@ -1247,5 +1262,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="js/contact-form.js"></script>
     <script src="js/main.js"></script>
+    <!-- Security Module for Input Validation & Protection -->
+    <script src="js/security.js"></script>
   </body>
 </html>
